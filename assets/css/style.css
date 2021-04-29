@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #606060;
+
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+input {
+  font-family: "Poppins", sans-serif;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.logo {
+  max-width: 112px;
+  padding-bottom: 16px;
+}
+
+.container {
+  background-color: #1a1a1a;
+
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+
+  font-size: 12px;
+  font-weight: bold;
+}
+.logo-area {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.interaction-area {
+  padding: 64px 48px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login-description {
+  text-align: center;
+
+  margin-top: 8px;
+  padding-bottom: 33px;
+  margin-bottom: 33px;
+
+  position: relative;
+}
+.login-description::before {
+  content: "";
+
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  height: 2px;
+  width: 50px;
+
+  background-color: #fff;
+}
+.custom-input {
+  padding-bottom: 4px;
+  border-bottom: 2px solid #868686;
+
+  color: #868686;
+
+  transition: 0.3s border-color, 0.3s color;
+
+  display: flex;
+  flex-direction: row;
+}
+.custom-input.active {
+  border-color: #fff;
+  color: #fff;
+}
+.custom-input .icon {
+  font-size: 24px;
+
+  margin-left: 4px;
+  margin-right: 16px;
+}
+.custom-input input {
+  background: none;
+  outline: none !important;
+
+  border: none;
+
+  color: white;
+  font-weight: 600;
+}
+.custom-input + * {
+  margin-top: 24px;
+}
+.submit-btn {
+  width: 100%;
+  padding: 1em 0;
+  border: none;
+
+  color: white;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  background-color: #333333;
+  transition: 0.3s filter;
+}
+.submit-btn:hover {
+  filter: contrast(1.2);
+}
+.button-medias {
+  margin-top: 8px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.button-medias button {
+  background: none;
+
+  border: none;
+  margin-top: 24px;
+
+  font-size: 16px;
+  color: white;
+}
+.button-medias button + button {
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .logo-area {
+    padding-top: 48px;
+  }
+}
