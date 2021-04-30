@@ -27,6 +27,8 @@ img {
 .logo {
   max-width: 112px;
   padding-bottom: 16px;
+
+  z-index: 15;
 }
 
 .container {
@@ -37,7 +39,58 @@ img {
 
   font-size: 12px;
   font-weight: bold;
+
+  position: relative;
 }
+.container::before {
+  content: "";
+  position: absolute;
+  right: 60%;
+  width: 400px;
+  height: 650px;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 11, 11, 1) 0%,
+    rgba(51, 51, 51, 1) 100%
+  );
+  transform: rotate(-15deg);
+  z-index: 10;
+  box-shadow: 0 0 2rem rgb(0 0 0);
+  bottom: -25%;
+}
+.container::after {
+  content: "";
+  position: absolute;
+  right: 60%;
+  width: 400px;
+  height: 650px;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 11, 11, 1) 0%,
+    rgba(51, 51, 51, 1) 100%
+  );
+  transform: rotate(-7.5deg);
+  z-index: 5;
+  box-shadow: 0 0 2rem rgb(0 0 0);
+  bottom: -25%;
+}
+
+.box {
+  display: contents;
+
+  position: relative;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  left: 0;
+  top: 0;
+  border: 2px solid blue;
+  z-index: 10;
+}
+
 .logo-area {
   display: flex;
   align-items: flex-end;
@@ -50,6 +103,8 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  z-index: 15;
 }
 .login-description {
   text-align: center;
@@ -145,6 +200,12 @@ img {
 @media screen and (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
+  }
+  .container::before {
+    z-index: -1;
+  }
+  .container::after {
+    z-index: -2;
   }
   .logo-area {
     padding-top: 48px;
